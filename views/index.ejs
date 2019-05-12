@@ -1,0 +1,90 @@
+<!--This program is free software: you can redistribute it and/or modify-->
+<!--it under the terms of the GNU General Public License as published by-->
+<!--the Free Software Foundation, either version 3 of the License, or-->
+<!--(at your option) any later version.-->
+
+<!--This program is distributed in the hope that it will be useful,-->
+<!--but WITHOUT ANY WARRANTY; without even the implied warranty of-->
+<!--MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the-->
+<!--GNU General Public License for more details.-->
+
+<!--You should have received a copy of the GNU General Public License-->
+<!--along with this program.  If not, see <https://www.gnu.org/licenses/>.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="https://img.icons8.com/ios/50/000000/doge.png">
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Meme Generator 4 Millenials</title>
+</head>
+<body>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-12 col-sm-12 col-lg-12 m-auto">
+            <div class="card card-body">
+                <fieldset>
+                    <h1 style="text-align: center">Meme Generator</h1>
+                    <!--                    BUTTONS-->
+                    <div class="btn-group col-12">
+                        <a type="button" class="btn btn-dark" href="new">New</a>
+                        <a type="button" class="btn btn-dark" href="random">Random</a>
+                        <br>
+                    </div>
+                    <div class="container">
+                        <% if(err) { %>
+                            <br>
+                            <div class="alert alert-dismissible alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Oh snap!</strong> Seems like there's an error somewhere! (__API_ERR__)
+                            </div>
+                        <% } %>
+                        <% if(isMemePresent) { %>
+                            <br>
+                            <h4><%= memeObj.title %></h4>
+                            <h6>Posted on <%= memeObj.date %> by <%= memeObj.author %></h6>
+                            <div style="text-align: center">
+                                <img alt="meme content" src="<%= memeObj.image %>"
+                                     style="max-width: 100%; max-height: 100%"
+                                     class="img-responsive">
+                            </div>
+                            <h6>Source : <%= memeObj.source %></h6>
+                            <a type="button" class="btn btn-dark btn-block" href="<%= memeObj.permalink %>"
+                               target="_blank">Go
+                                to the Meme Page</a>
+                            <br>
+                            <p>Powered by <a href="https://memeload.us" target="_blank">MemeLoad</a></p>
+                            <p><a href="https://icons8.com/icon/39539/doge">Doge icon by Icons8</a></p>
+                    </div>
+                    <% } else if(!err){ %>
+                        <br>
+                        <div class="alert alert-dismissible alert-danger">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Oh snap!</strong> It seems like memes are not working as well as we think!
+                        </div>
+                    <% } %>
+                </fieldset>
+            </div>
+            <p style="text-align: center">App Created by <a href="https://github.com/gauthamkrishna9991"
+                                                            target="_blank">Goutham Krishna K V</a></p>
+            <p style="text-align: center">Check out the Source @<a
+                        href="https://github.com/gauthamkrishna9991/friendly-octo-barnacle" target="_blank">GitHub/Friendly-Octo-Barnacle</a>
+            </p>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

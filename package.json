@@ -1,0 +1,13 @@
+{
+  "name": "friendly-octo-barnacle",
+  "author": "Goutham Krishna K V",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index"
+  },
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  }
+}
